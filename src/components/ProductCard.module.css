@@ -2,6 +2,9 @@
   background-color: var(--background);
   border: 1px solid var(--border);
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .productImage {
@@ -12,6 +15,9 @@
 
 .content {
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .content h3 {
@@ -28,4 +34,29 @@
 
 .content a {
   font-size: 0.85rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.content button {
+  background-color: var(--accent);
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #a88734;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.content button:hover {
+  background-color: #ddb347;
+}
+
+.content button + button {
+  margin-top: 0.25rem;
 }
