@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "ShopNex",
@@ -23,6 +24,7 @@ export default function RootLayout({
               <Link href="/products">Products</Link>
             </li>
           </ul>
+
           <form className="search-form">
             <input
               type="text"
@@ -33,6 +35,15 @@ export default function RootLayout({
               Search
             </button>
           </form>
+
+          <Link href="/cart" className="cart-button">
+            <Image
+              src="/shopping-cart.svg"
+              alt="Shopping Cart"
+              width={24}
+              height={24}
+            />
+          </Link>
         </nav>
         <main>{children}</main>
       </body>
