@@ -42,7 +42,7 @@
   text-decoration: underline;
 }
 
-.content button {
+/* .content button {
   background-color: var(--accent);
   color: var(--text);
   font-size: 0.85rem;
@@ -55,7 +55,7 @@
 
 .content button:hover {
   background-color: #ddb347;
-}
+} */
 
 .content button + button {
   margin-top: 0.25rem;

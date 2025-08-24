@@ -28,8 +28,8 @@ export default function ProductCard({
         <h3>{title}</h3>
         <p>${price.toFixed(2)}</p>
         <Link href={`/products/${id}`}>See Details</Link>
-        <button>Add to cart</button>
-        <button>Buy Now</button>
+        <button className="button-accent">Add to cart</button>
+        <button className="button-accent">Buy Now</button>
       </div>
     </div>
   );

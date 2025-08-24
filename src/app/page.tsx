@@ -26,7 +26,7 @@ export default async function Home() {
         <h1>Welcome to My Store</h1>
         <p>Shop our wide selection of products at great prices.</p>
         <Link href="/products">
-          <button>Shop All Products</button>
+          <button className="button-accent">Shop All Products</button>
         </Link>
       </section>
 

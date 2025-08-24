@@ -94,6 +94,21 @@ button {
   filter: brightness(0.95);
 }
 
+.button-accent {
+  background-color: var(--accent);
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #a88734;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-accent:hover {
+  background-color: #ddb347;
+}
+
 .cart-button {
   display: flex;
   align-items: center;
