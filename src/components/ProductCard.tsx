@@ -1,0 +1,34 @@
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./ProductCard.module.css";
+
+interface ProductCardProps {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+}
+
+export default function ProductCard({
+  id,
+  title,
+  price,
+  image,
+}: ProductCardProps) {
+  return (
+    <div className={styles.productCard}>
+      <Image
+        src={image}
+        alt={title}
+        width={200}
+        height={200}
+        className={styles.productImage}
+      />
+      <div className={styles.content}>
+        <h3>{title}</h3>
+        <p>${price.toFixed(2)}</p>
+        <Link href={`/products/${id}`}>See Details</Link>
+      </div>
+    </div>
+  );
+}

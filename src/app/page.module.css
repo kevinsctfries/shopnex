@@ -55,38 +55,6 @@
   margin: 0 auto;
 }
 
-.productCard {
-  background-color: var(--background);
-  border: 1px solid var(--border);
-  padding: 0.5rem;
-}
-
-.productCard img {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-}
-
-.productCard .content {
-  padding: 0.5rem;
-}
-
-.productCard h3 {
-  font-size: 0.9rem;
-  font-weight: normal;
-  margin-bottom: 0.25rem;
-}
-
-.productCard p {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-}
-
-.productCard a {
-  font-size: 0.85rem;
-}
-
 .newsletter {
   background-color: #f3f3f3;
   padding: 1.5rem 1rem;
