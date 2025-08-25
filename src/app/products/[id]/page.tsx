@@ -29,7 +29,9 @@ async function getRelatedProducts(
   });
   if (!res.ok) throw new Error("Failed to fetch related products");
   const products = await res.json();
-  return products.filter(p => p.category === category && p.id !== excludeId);
+  return products.filter(
+    (p: Product) => p.category === category && p.id !== excludeId
+  );
 }
 
 export default async function ProductPage({
