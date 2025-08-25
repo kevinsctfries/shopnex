@@ -1,6 +1,7 @@
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import Sidebar from "@/components/Sidebar";
 
 export const metadata = {
   title: "ShopNex",
@@ -17,6 +18,9 @@ export default function RootLayout({
       <body>
         <nav className="navbar">
           <ul className="nav-list">
+            <li>
+              <Sidebar />
+            </li>
             <li>
               <Link href="/">Home</Link>
             </li>
