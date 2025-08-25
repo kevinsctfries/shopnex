@@ -36,9 +36,7 @@ export default function Sidebar() {
         <ul>
           {categories.map(cat => (
             <li key={cat}>
-              <Link href={`/products/category/${encodeURIComponent(cat)}`}>
-                {cat}
-              </Link>
+              <Link href={`/category/${encodeURIComponent(cat)}`}>{cat}</Link>
             </li>
           ))}
         </ul>
