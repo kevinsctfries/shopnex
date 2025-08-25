@@ -24,15 +24,12 @@ async function getRelatedProducts(
   category: string,
   excludeId: number
 ): Promise<Product[]> {
-  const res = await fetch(
-    `https://fakestoreapi.com/products/category/${encodeURIComponent(
-      category
-    )}`,
-    { next: { revalidate: 60 } }
-  );
+  const res = await fetch(`https://fakestoreapi.com/products`, {
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error("Failed to fetch related products");
   const products = await res.json();
-  return products.filter(p => p.id !== excludeId);
+  return products.filter(p => p.category === category && p.id !== excludeId);
 }
 
 export default async function ProductPage({
@@ -45,6 +42,12 @@ export default async function ProductPage({
   const relatedProducts = await getRelatedProducts(
     product.category,
     product.id
+  );
+
+  console.log("Product image:", product.image);
+  console.log(
+    "Related images:",
+    relatedProducts.map(p => p.image)
   );
 
   return (
