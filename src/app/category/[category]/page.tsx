@@ -19,8 +19,8 @@ async function getCategoryProducts(category: string): Promise<Product[]> {
     throw new Error("Failed to fetch products");
   }
 
-  const products = await res.json();
-  return products.filter((p: Product) => p.category === category);
+  const products: Product[] = await res.json();
+  return products.filter(p => p.category === category);
 }
 
 export default async function CategoryPage({
@@ -28,14 +28,10 @@ export default async function CategoryPage({
 }: {
   params: { category: string };
 }) {
-  const category = decodeURIComponent(params.category);
+  const { category: rawCategory } = params;
+  const category = decodeURIComponent(rawCategory);
 
-  const products: {
-    id: number;
-    title: string;
-    price: number;
-    image: string;
-  }[] = await getCategoryProducts(category);
+  const products: Product[] = await getCategoryProducts(category);
 
   return (
     <div className={styles.page}>
@@ -60,6 +56,15 @@ export default async function CategoryPage({
             />
           ))}
         </div>
+      </section>
+
+      <section className={styles.newsletter}>
+        <h2>Sign Up for Updates</h2>
+        <p>Get the latest deals and product updates.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit">Sign Up</button>
+        </form>
       </section>
     </div>
   );
