@@ -20,6 +20,11 @@
   font-size: 1.25rem;
   -webkit-user-select: none;
   user-select: none;
+  text-decoration: none;
+}
+
+.brand:hover {
+  text-decoration: none;
 }
 
 .brandWhite {

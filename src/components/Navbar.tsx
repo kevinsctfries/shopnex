@@ -13,10 +13,10 @@ export default function Navbar({ categories }: { categories: string[] }) {
   return (
     <nav className={styles.navbar}>
       <div className={styles.leftGroup}>
-        <span className={styles.brand}>
+        <Link href="/" className={styles.brand}>
           <span className={styles.brandWhite}>Shop</span>
           <span className={styles.brandAccent}>Nex</span>
-        </span>
+        </Link>
 
         <ul className={styles.navList}>
           <li>
