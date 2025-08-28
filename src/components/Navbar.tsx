@@ -12,17 +12,24 @@ export default function Navbar({ categories }: { categories: string[] }) {
 
   return (
     <nav className={styles.navbar}>
-      <ul className={styles.navList}>
-        <li>
-          <Sidebar categories={categories} />
-        </li>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/products">Products</Link>
-        </li>
-      </ul>
+      <div className={styles.leftGroup}>
+        <span className={styles.brand}>
+          <span className={styles.brandWhite}>Shop</span>
+          <span className={styles.brandAccent}>Nex</span>
+        </span>
+
+        <ul className={styles.navList}>
+          <li>
+            <Sidebar categories={categories} />
+          </li>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/products">Products</Link>
+          </li>
+        </ul>
+      </div>
 
       <form className={styles.searchForm}>
         <input

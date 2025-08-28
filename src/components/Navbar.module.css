@@ -3,8 +3,31 @@
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.25rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.brandWhite {
+  color: #ffffff;
+}
+
+.brandAccent {
+  color: var(--accent);
 }
 
 .navList {
@@ -13,6 +36,12 @@
   gap: 1rem;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+
+.navList > li {
+  display: flex;
+  align-items: center;
 }
 
 .navList > li > a {
@@ -21,12 +50,13 @@
   justify-content: center;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-weight: normal;
+  font-weight: bold;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
-  height: 36px;
+  height: 100%;
+  line-height: 1;
 }
 
 .navList > li > a:hover {
@@ -34,11 +64,12 @@
 }
 
 .searchForm {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex: 1;
   max-width: 500px;
-  margin-left: 2rem;
-  align-items: center;
+  width: 100%;
 }
 
 .searchInput {
@@ -67,11 +98,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
+  margin-left: auto;
+  z-index: 1;
 }
 
 .cartButton img {
@@ -85,15 +117,21 @@
     align-items: stretch;
   }
 
+  .leftGroup {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .navList {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
   }
 
   .searchForm {
-    margin-left: 0;
+    position: static;
+    transform: none;
+    margin: 0.5rem 0;
     width: 100%;
   }
 
