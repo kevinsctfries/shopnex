@@ -1,26 +1,11 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Sidebar.module.css";
 
-export default function Sidebar() {
-  const [categories, setCategories] = useState<string[]>([]);
+export default function Sidebar({ categories }: { categories: string[] }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    async function fetchCategories() {
-      try {
-        const res = await fetch("https://fakestoreapi.com/products/categories");
-        const data = await res.json();
-        setCategories(data);
-      } catch (err) {
-        console.error("Failed to fetch categories", err);
-      }
-    }
-    fetchCategories();
-  }, []);
 
   return (
     <>

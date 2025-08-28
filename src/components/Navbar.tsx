@@ -7,14 +7,14 @@ import CartDrawer from "@/components/CartDrawer";
 import { useState } from "react";
 import styles from "./Navbar.module.css";
 
-export default function Navbar() {
+export default function Navbar({ categories }: { categories: string[] }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navList}>
         <li>
-          <Sidebar />
+          <Sidebar categories={categories} />
         </li>
         <li>
           <Link href="/">Home</Link>
