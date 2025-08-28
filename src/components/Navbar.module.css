@@ -15,12 +15,13 @@
   padding: 0;
 }
 
-.navList li a {
+.navList > li > a {
+  color: #ffffff;
   font-weight: normal;
   font-size: 0.9rem;
 }
 
-.navList li a:hover {
+.navList > li > a:hover {
   color: var(--accent);
 }
 
