@@ -32,14 +32,25 @@ export default function Sidebar() {
       </button>
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
-        <h3>Categories</h3>
-        <ul>
-          {categories.map(cat => (
-            <li key={cat}>
-              <Link href={`/category/${encodeURIComponent(cat)}`}>{cat}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.sidebarHeader}>
+          <h3>Categories</h3>
+          <button
+            className={styles.closeButton}
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu">
+            ✕
+          </button>
+        </div>
+
+        <div className={styles.sidebarContent}>
+          <ul>
+            {categories.map(cat => (
+              <li key={cat}>
+                <Link href={`/category/${encodeURIComponent(cat)}`}>{cat}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </aside>
     </>
   );

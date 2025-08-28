@@ -1,48 +1,75 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
+  left: 0;
+  width: 320px;
+  max-width: 100%;
   height: 100%;
-  background: var(--background-light, #f9f9f9);
-  padding: 1rem;
-  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
-  transition: left 0.3s ease;
-  z-index: 1000;
-
+  background-color: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 2000;
   display: flex;
   flex-direction: column;
 }
 
 .sidebar.open {
-  left: 0;
+  transform: translateX(0);
 }
 
-.sidebar h3 {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--foreground, #222);
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.sidebar ul {
+.sidebarHeader h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.sidebarContent {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebarContent ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar li {
+.sidebarContent li {
   margin: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
 }
 
-.sidebar li a {
+.sidebarContent li:last-child {
+  border-bottom: none;
+}
+
+.sidebarContent a {
   text-decoration: none;
-  color: var(--foreground, #333);
+  color: #000;
   font-size: 0.95rem;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.sidebar li a:hover {
+.sidebarContent a:hover {
   color: var(--accent, #0070f3);
 }
 
@@ -50,7 +77,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
   background: transparent;
   color: var(--foreground-inverse, #fff);
   border: none;
@@ -58,7 +84,6 @@
   font-weight: 600;
   cursor: pointer;
   padding: 0.5rem 0.75rem;
-
   transition: color 0.2s ease;
 }
 
