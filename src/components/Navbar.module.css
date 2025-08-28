@@ -58,11 +58,17 @@
 .cartButton {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-left: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .cartButton img {
-  filter: invert(1);
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 768px) {
